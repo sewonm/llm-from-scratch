@@ -7,7 +7,7 @@ response = requests.get(url, headers=headers)
 
 
 soup = BeautifulSoup(response.text, 'html.parser') 
-content = soup.select("div.mw-parser-output > p")
+content = soup.select("div.mw-parser-output  p")
 paragraphs = [p.get_text(strip=True) for p in content if p.get_text(strip=True)]
 
 for p in paragraphs[:100]:
